@@ -11,7 +11,7 @@ var clientConfig = {
   devBaseUrl: 'http://localhost',
   paths: {
     html: 'src/*.html',
-    js: 'src/js/**/*.js',
+    js: ['src/js/**/*.js', 'src/js/**/*.jsx'],
     images: 'src/images/*',
     css: [
       'node_modules/bootstrap/dist/css/bootstrap.min.css',
@@ -19,7 +19,7 @@ var clientConfig = {
       'src/css/index.css'
     ],
     dist: 'dist',
-    entryPoint: 'src/js/index.js',
+    entryPoint: 'src/js/index.jsx',
     indexPage: 'src/index.html'
   }
 }
@@ -46,7 +46,9 @@ gulp.task('html', function () {
 })
 
 gulp.task('js', function () {
-  browserify(clientConfig.paths.entryPoint)
+  browserify(clientConfig.paths.entryPoint, {
+    extensions: ['.js', '.jsx']
+  })
     .bundle()
     .on('error', console.error.bind(console))
     .pipe(source('bundle.js'))

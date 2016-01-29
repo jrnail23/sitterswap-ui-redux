@@ -8,6 +8,14 @@
     "compile": "npm run lint && gulp js",
     "start": "gulp"
   },
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "immutable": "^3.7.6",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.1.1",
+    "redux": "^3.1.2"
+  },
   "devDependencies": {
     "babel": "^5.8.26",
     "babel-eslint": "^4.1.5",
