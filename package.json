@@ -1,0 +1,57 @@
+{
+  "name": "sitterswap-ui-redux",
+  "version": "1.0.0",
+  "description": "Sandbox project",
+  "main": "index.js",
+  "scripts": {
+    "lint": "gulp lint",
+    "compile": "npm run lint && gulp js",
+    "start": "gulp"
+  },
+  "devDependencies": {
+    "babel": "^5.8.26",
+    "babel-eslint": "^4.1.5",
+    "babelify": "^6.4.0",
+    "browserify": "^13.0.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-open": "^1.0.0",
+    "gulp-standard": "^5.2.2",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrnail23/sitterswap-ui-redux.git"
+  },
+  "author": "jrnail23",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jrnail23/sitterswap-ui-redux/issues"
+  },
+  "homepage": "https://github.com/jrnail23/sitterswap-ui-redux#readme",
+  "babel": {
+    "stage": 0
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "globals": [
+      "describe",
+      "should",
+      "beforeEach",
+      "afterEach",
+      "it",
+      "expect"
+    ]
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "stage": 0
+        }
+      ]
+    ]
+  }
+}
