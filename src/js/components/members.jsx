@@ -18,8 +18,8 @@ const Members = ({members, dispatch}) => (
   </div>
 )
 
-const mapStateToProps = (members) => {
-  return { members }
-}
+const mapStateToProps = (members) => ({ members })
+
+// const mapDispatchToProps = (dispatch) => ({})
 
 export default connect(mapStateToProps)(Members)
