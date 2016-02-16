@@ -1,9 +1,9 @@
-import { List } from 'immutable'
-
-export default (state = List(['Member Zero']), action) => {
+export default (state = [], action) => {
   switch (action.type) {
     case 'addMember':
-      return state.push(action.member)
+      const newState = state.slice()
+      newState.push(action.member)
+      return newState
     default:
       return state
   }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { IndexLink, Link } from 'react-router'
 
-export default () => (
+const Header = () => (
   <nav className='navbar navbar-default'>
     <div className='container-fluid'>
       <IndexLink to='/' className='navbar-brand'>
@@ -14,3 +14,5 @@ export default () => (
     </div>
   </nav>
 )
+
+export default Header

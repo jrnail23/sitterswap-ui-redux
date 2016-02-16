@@ -4,3 +4,18 @@ export const addMember = (member) => {
     member
   }
 }
+
+export const setErrors = (errors) => {
+  return {
+    type: 'setErrors',
+    errors
+  }
+}
+
+export const setMemberState = ({fieldName, value}) => {
+  return {
+    type: 'setMemberState',
+    fieldName,
+    value
+  }
+}
