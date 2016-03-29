@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react'
 import {Link} from 'react-router'
-import {MembersTable} from './members-table'
+import MembersTable from './members-table'
 
 const MembersPage = ({members}) => (
   <div>

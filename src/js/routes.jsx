@@ -1,10 +1,10 @@
 import React from 'react'
 import { Route, IndexRoute, Redirect } from 'react-router'
-import CoreLayout from '../layouts/core-layout'
-import HomeView from '../views/home'
-import NotFoundView from '../views/not-found'
-import MembersContainer from '../containers/members'
-import AddMemberContainer from '../containers/add-member'
+import CoreLayout from './layouts/core-layout'
+import HomeView from './views/home'
+import NotFoundView from './views/not-found'
+import MembersContainer from './redux/containers/members'
+import AddMemberContainer from './redux/containers/add-member'
 
 export default (
   <Route path='/' component={CoreLayout}>

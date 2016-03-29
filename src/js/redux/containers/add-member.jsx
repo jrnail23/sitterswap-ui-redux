@@ -1,5 +1,5 @@
 import React, { PropTypes} from 'react'
-import AddMemberPage from '../components/members/add'
+import AddMemberPage from '../../components/members/add'
 import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux'
 import * as AppActions from '../actions'

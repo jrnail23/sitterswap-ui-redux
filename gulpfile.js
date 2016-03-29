@@ -1,10 +1,12 @@
-var gulp = require('gulp')
-var connect = require('gulp-connect')
-var open = require('gulp-open')
-var browserify = require('browserify')
-var source = require('vinyl-source-stream')
-var concat = require('gulp-concat')
-var standard = require('gulp-standard')
+'use strict'
+
+const gulp = require('gulp')
+const connect = require('gulp-connect')
+const open = require('gulp-open')
+const browserify = require('browserify')
+const source = require('vinyl-source-stream')
+const concat = require('gulp-concat')
+const standard = require('gulp-standard')
 
 var clientConfig = {
   port: 9005,
@@ -24,7 +26,7 @@ var clientConfig = {
   }
 }
 
-gulp.task('connect', function () {
+gulp.task('connect', () => {
   connect.server({
     root: [clientConfig.paths.dist],
     port: clientConfig.port,
@@ -34,18 +36,18 @@ gulp.task('connect', function () {
   })
 })
 
-gulp.task('open', ['connect'], function () {
+gulp.task('open', ['connect'], () => {
   gulp.src(__filename)
     .pipe(open({uri: clientConfig.devBaseUrl + ':' + clientConfig.port + '/'}))
 })
 
-gulp.task('html', function () {
+gulp.task('html', () => {
   gulp.src(clientConfig.paths.html)
     .pipe(gulp.dest(clientConfig.paths.dist))
     .pipe(connect.reload())
 })
 
-gulp.task('js', function () {
+gulp.task('js', () => {
   browserify(clientConfig.paths.entryPoint, {
     extensions: ['.js', '.jsx']
   })
@@ -56,26 +58,26 @@ gulp.task('js', function () {
     .pipe(connect.reload())
 })
 
-gulp.task('css', function () {
+gulp.task('css', () => {
   gulp.src(clientConfig.paths.css)
     .pipe(concat('bundle.css'))
     .pipe(gulp.dest(clientConfig.paths.dist + '/css'))
     .pipe(connect.reload())
 })
 
-gulp.task('images', function () {
+gulp.task('images', () => {
   gulp.src(clientConfig.paths.images)
     .pipe(gulp.dest(clientConfig.paths.dist + '/images'))
     .pipe(connect.reload())
 })
 
-gulp.task('lint', function () {
+gulp.task('lint', () => {
   return gulp.src(clientConfig.paths.js)
     .pipe(standard())
     .pipe(standard.reporter('default'))
 })
 
-gulp.task('watch', function () {
+gulp.task('watch', () => {
   gulp.watch(clientConfig.paths.html, ['html'])
   gulp.watch(clientConfig.paths.js, ['js', 'lint'])
   gulp.watch(clientConfig.paths.css, ['css'])

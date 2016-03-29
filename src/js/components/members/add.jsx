@@ -29,9 +29,7 @@ class AddMemberPage extends Component {
   }
 
   onChange = (e) => {
-    console.log('AddMemberPage.onChange', e.target)
     const {target: {name, value}} = e
-    console.log('setMemberState', {fieldName: name, value})
     this.props.setMemberState({fieldName: name, value})
   }
 
@@ -47,7 +45,6 @@ class AddMemberPage extends Component {
   }
 
   render () {
-    console.log('AddMemberPage.render')
     const {member, errors} = this.props
     return (
       <div>

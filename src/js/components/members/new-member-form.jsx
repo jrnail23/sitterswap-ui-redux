@@ -31,10 +31,10 @@ const NewMemberForm = ({member: {firstName, lastName, emailAddress}, onChange, o
 
 NewMemberForm.propTypes = {
   member: PropTypes.shape({
-    firstName: PropTypes.string.isRequired,
-    lastName: PropTypes.string.isRequired,
-    emailAddress: PropTypes.string.isRequired
-  }).isRequired,
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    emailAddress: PropTypes.string
+  }),
   onChange: PropTypes.func.isRequired,
   onSave: PropTypes.func.isRequired,
   errors: PropTypes.object
